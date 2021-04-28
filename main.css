@@ -1,0 +1,387 @@
+/*Font used for entire page "Roboto+Condensed"*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+body {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(216, 209, 209);
+}
+
+/*Styling for initial welcome page*/
+#welcomeSlider {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-image: linear-gradient(#27231b, rgb(146, 106, 73));
+  justify-content: center;
+  align-items: center;
+  transition: all;
+  transition-duration: 1.5s;
+  transition-delay: .7s;
+}
+/*Style for WELCOME TO YOUR FREE CUP*/
+#message {
+  border-top: 1px solid rgb(216, 209, 209);
+  padding-top: 35px;
+  font-size: 5rem;
+  color: rgb(216, 209, 209);
+}
+
+/*Styling for GET STARTED button*/
+#clickable {
+  font-size: 1.5rem;
+  background-color: #d69825;
+  color:rgb(58,37,34);
+  padding: 20px 40px;
+  border-radius: 32px;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px 2px #292012;
+  transition: all;
+  transition-duration: .3s;
+}
+#clickable:hover {
+  font-size: 1.65rem;
+  transition: all;
+  transition-duration: .3s;
+}
+#clickable:active {
+  font-size: 1.5rem;
+  background-color: #946817;
+  transition: all;
+  transition-duration: .1s;
+}
+
+
+/*Styling for main page AFTER welcome splash*/
+#header {
+  background-color: rgb(58,37,34);
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  box-shadow: 0px 3px 3px 3px rgb(143, 139, 139);
+}
+/*"OUR SELECTION" Styling and logo image*/
+#title {
+  padding-left: 50px;
+  font-size: 4rem;
+  color: rgb(216, 209, 209);
+  margin: 20px 0px;
+}
+#title img {
+  height: 4.5rem;
+}
+
+/*Style for "GO HOME" button*/
+#navigation ul {
+  margin: 0;
+  padding-right: 15px;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+#navigation ul li {
+  height: 100%;
+  padding: 0px 20px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+#navigation ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #d69825;
+  color:rgb(58,37,34);
+  padding: 15px 30px;
+  border-radius: 32px;
+  box-shadow: 0px 5px 5px 0px #141009;
+  transition: all;
+  transition-duration: .3s;
+}
+#navigation ul li a:hover {
+  font-size: 1.1em;
+  transition: all;
+  transition-duration: .1s;
+}
+#navigation ul li a:active {
+  background-color:rgb(146, 106, 73);
+  transition: all;
+  transition-duration: .2s;
+}
+
+
+/*Style for 3 amazing brews and coffee bean .pngs*/
+#amazeParent {
+  padding-top: 150px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+#amazeChild {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*Styling for the side borders around three coffee pictures and <p>s*/
+#sideBordersParent {
+  text-align: center;
+}
+#sideBordersChild {
+  text-transform: none;
+  width: 70%;
+  border-left: 1px solid #27231b;
+  border-right: 1px solid #27231b;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*Styling for three coffee pictures and their <p>s*/
+#coffeeSection p {
+  border-top: 1px solid #27231b;
+  /*font-family: 'Archivo Black', sans-serif;*/
+  text-transform: uppercase;
+  color: #4d3b20;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: bolder;
+  padding: 15px;
+  margin: 0px;
+  text-align: center;
+  width: 100%;
+  min-width: 100px;
+  max-width: 400px;
+}
+#coffeeSection img {
+  box-shadow: 0px 5px 5px 0px #292012;
+  width: 100%;
+  max-width: 400px;
+}
+
+
+/*Styling needed for the flexboxes*/
+.flexParent {
+  display: flex;
+  flex-wrap: nowrap;
+}
+/*Styling for names of brews*/
+.flexParent span {
+  text-decoration: underline #292012;
+  font-style: italic;
+}
+/*left divs top and bottom*/
+.left {
+  width: 50%;
+  margin: 5%;
+  min-width: 100px;
+}
+/*right divs top and bottom*/
+.right {
+  /*flexbox to vertically-align <p>s
+  also helps to easily center-align and keeps design flexible*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 5%;
+  min-width: 100px;
+}
+/*left div in the middle*/
+.middleLeft{
+  /*flexbox to vertically-align <p>s
+  also helps to easily center-align and keeps design flexible*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 5%;
+  min-width: 100px;
+}
+/*This element is only displayed when the page is small enough.  See @media query at bottom.*/
+.middleLeftSmall {
+  display: none;
+}
+/*right div in the middle*/
+.middleRight{
+  width: 50%;
+  margin: 5%;
+  min-width: 100px;
+}
+/*Bottom Flexparent style*/
+#bottomFlex {
+  margin-bottom: 150px;
+}
+
+
+/*Style for disclaimer at the bottom*/
+#disclaimer {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+
+/*Styling for credit for images used*/
+footer {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #292012;
+  color: #835d16;
+  font-size: .7rem;
+}
+#creditsInfo {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+#creditsInfo a {
+  color: #d69825;
+  text-decoration: none;
+}
+
+/*Media query time!*/
+@media screen and (max-width: 600px){
+  /*New Welcome message styling*/
+  #message {
+    font-size: 3rem;
+    padding: 10px 20px;
+    border: none;
+  }
+  #clickable {
+    font-size: 1.3rem;
+    padding: 10px 20px;
+  }
+  #clickable:hover {
+    font-size: 1.1rem;
+    transition: all;
+    transition-duration: .3s;
+  }
+  #clickable:active {
+    font-size: 1rem;
+    background-color: #946817;
+    transition: all;
+    transition-duration: .1s;
+  }
+
+  /*New top bar styling*/
+  #header {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  #title {
+    padding-left: 20px;
+    font-size: 2rem;
+  }
+  #title img {
+    height: 2rem;
+  }
+  #navigation {
+    display: none;
+  }
+
+  /*New "Three Amazing Brews" styling*/
+  #amazeParent {
+    padding-top: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  #amazeChild {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 80%;
+    border: none;
+  } 
+  #amazeChild h1 {
+    font-size: 1.8rem;
+    border-top: 1px solid #292012;
+    padding-top: 10px;
+  }
+  #amazeChild img {
+    display: none;
+  }
+
+  /*New coffee section styles*/
+  /*Styling for three coffee pictures and their <p>s*/
+  #coffeeSection p {
+    border: none;
+    border-bottom: 1px solid #292012;
+    line-height: 1.8rem;
+    font-weight: bold;
+    padding: 20px 10px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+    min-width: 100px;
+    max-width: 400px;
+  }
+  #coffeeSection img {
+    box-shadow: 0px 5px 5px 0px #292012;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /*This gets rid of the vertical borders on the sides*/
+  #sideBordersChild {
+    border: none;
+    padding: 0;
+  }
+  /*This aligns the content to the center of each flexbox*/
+  .flexParent {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+  /*Changes to the spacing of each div within the flexboxes*/
+  .left {
+    width: 100%;
+    min-width: 100px;
+    margin: 0;
+  }
+  .right {
+    justify-content: center;
+    margin: 0;
+    min-width: 100px;
+    width: 100%;
+  }
+  /*This element does not work here when the layout is smaller so we must hide it and reveal its twin underneath the image it corresponds to*/
+  .middleLeft{
+    display: none;
+  }
+  /*This element is hidden when the page size is big but this reveals it when the page size is shrinks*/
+  .middleLeftSmall {
+    display: block;
+  }
+  .middleRight{
+    margin: 0;
+    width: 100%;
+    min-width: 100px;
+  }
+
+
+  /*Shortening the margins on the bottomflexFarent to look more pleasing on smaller screens*/
+  #bottomFlex {
+    margin-bottom: 30px;
+  }
+  /*Makes disclaimer pop a bit more*/
+  #disclaimer {
+    font-weight: bold;
+  }
+  #creditsInfo {
+    padding: 5px 0px;
+    font-size: .75rem;
+  }
+}
