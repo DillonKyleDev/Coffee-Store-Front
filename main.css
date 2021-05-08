@@ -1,6 +1,7 @@
 /*Font used for entire page "Roboto+Condensed"*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 html, body {
   scroll-behavior: smooth;
 }
@@ -17,6 +18,7 @@ body {
   width: 100%;
   height: 100vh;
   background-image: url('coffee/coffeeShop3.jpg');
+  background-repeat: no-repeat;
 }
 
 
@@ -32,6 +34,72 @@ body {
   justify-content: space-between;
   box-shadow: 0px 3px 3px 0px rgb(0,0,0,.2);
 }
+
+sidebar {
+  position: fixed;
+  right: 0;
+  top: 68px;
+  height: 100vh;
+  background-color: rgb(0,0,0,.7);
+  color: white;
+  font-size: 2rem;
+  padding: 70px;
+  text-align: right;
+  
+}
+#cartObject {
+  background-color: rgb(107, 60, 33);
+  padding: 5px;
+  margin: 20px;
+  height: 100%;
+}
+#hideSidebar {
+  color: white;
+  font-size: 3.5rem;
+  border-radius: 2px;
+  padding: 5px 15px;
+  width: max-content;
+}
+#cartObject button {
+  border: none;
+}
+#price {
+  text-decoration: underline;
+}
+#grandTotal {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+label {
+  padding: 5px;
+  margin: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#total {
+  width: max-content;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  margin: 10px;
+  border: solid 1px rgb(216, 216, 216);
+  border-radius: 2px;
+}
+.cartItem {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 15px;
+  margin: 10px;
+}
+#cartObject #remove {
+  font-size: 1.5rem;
+  border: solid 1px rgb(46, 46, 46);
+  width: max-content;
+  margin-left: 10px;
+  border-radius: 2px;
+}
+
 /*"OUR SELECTION" Styling and logo image*/
 #title {
   padding-left: 50px;
@@ -52,7 +120,7 @@ a:visited {
   color: inherit;
 }
 .our {
-  color:#0aa31e;
+  color:#a3470a;
 }
 #house {
   color: rgb(255, 255, 255);
@@ -68,41 +136,37 @@ a:visited {
   text-transform: uppercase;
   margin-right: 25px;
   padding: 15px 15px;
-  border-radius: 3px;;
+  
   align-items: center;
   text-decoration: none;
-  font-weight: bold;
   cursor: pointer;
   border: 1px solid #d3d3d3;
-  background-color: rgb(10,163,30,.9);
+  background-color: rgb(163,71,10);
   color:rgb(255, 255, 255);
   
   transition: background-color;
   transition-duration: .2s;
 }
-#navigation a:hover {
-  background-color: rgb(200,200,200,.7);
-  transition: background-color;
-  transition-duration: .2s;
-}
-
 
 #yourHouseContainer {
   height: 100%;
-  display: flex;
-  justify-content: space-between;
   border-bottom: solid white 10px;
-  background-color: rgb(0,0,0,.1);
+  background-color: rgb(0,0,0,.2);
 }
 #yourHouse {
   height: 100%;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
   color: white;
   font-size: 3rem;
   width: 40%;
   margin-left: 15%;
   line-height: 1.5;
+}
+#yourHouse h1 {
+  margin: 0;
+  margin-top: 50%;
 }
 
 #linkContainer {
@@ -111,25 +175,29 @@ a:visited {
   margin-right: 35%;
 }
 #whatsBrewing {
+  display: flex;
+  align-items: center;
   padding: 15px 15px;
   border-radius: 3px;
-  border: 1px solid #d3d3d3;
-  background-color: rgb(10,163,30,.9);
+  border: none;
+  background-color: rgb(0,0,0,0);
   font-family: 'Roboto', sans-serif;
   color: white;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 3rem;
   font-weight: 500;
   cursor: pointer;
-  width: 196px;
-  height: 51px;
-  transition: background-color;
-  transition-duration: .2s;
+  transition: color .2s;
+}
+#whatsBrewing a {
+  font-family: 'Amatic SC', cursive;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #whatsBrewing:hover {
-  background-color: rgb(0,0,0,.5);
-  transition: background-color;
-  transition-duration: .1s;
+  color: rgb(163,71,10);
+  transition: color;
+  transition-duration: .2s;
 }
 
 /*Style for 3 amazing brews and coffee bean .pngs*/
@@ -168,19 +236,27 @@ a:visited {
 
 /*Styling for three coffee pictures and their <p>s*/
 #coffeeSection p {
-  border-top: 1px solid #27231b;
   /*font-family: 'Archivo Black', sans-serif;*/
-  text-transform: uppercase;
   color: #4d3b20;
-  font-size: 1.8rem;
-  line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
   font-weight: bolder;
-  padding: 15px;
   margin: 0px;
   text-align: center;
   width: 100%;
-  min-width: 100px;
-  max-width: 400px;
+  margin-top: 20px;
+  min-width: 250px;
+}
+#coffeeSection .secondP {
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: left;
+  border: solid black 1px;
+  border-radius: 2px;
+  padding: 10px;
+  margin-top: 0;
+  background-color: white;
+  max-width: 330px;
 }
 #coffeeSection img {
   box-shadow: 0px 5px 5px 0px #292012;
@@ -193,6 +269,7 @@ a:visited {
 .flexParent {
   display: flex;
   flex-wrap: nowrap;
+  border-top: solid 1px black;
 }
 /*Styling for names of brews*/
 .flexParent span {
@@ -212,36 +289,18 @@ a:visited {
   /*flexbox to vertically-align <p>s
   also helps to easily center-align and keeps design flexible*/
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
   width: 50%;
   margin: 5%;
-  min-width: 100px;
-}
-/*left div in the middle*/
-.middleLeft{
-  /*flexbox to vertically-align <p>s
-  also helps to easily center-align and keeps design flexible*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  margin: 5%;
-  min-width: 100px;
-}
-/*This element is only displayed when the page is small enough.  See @media query at bottom.*/
-.middleLeftSmall {
-  display: none;
-}
-/*right div in the middle*/
-.middleRight{
-  width: 50%;
-  margin: 5%;
+  margin-top: 10px;
   min-width: 100px;
 }
 /*Bottom Flexparent style*/
 #bottomFlex {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
+  border-bottom: solid 1px black;
 }
 
 
@@ -269,9 +328,93 @@ footer {
   text-decoration: none;
 }
 
+.button {
+  background-color:#a3470a;
+  border: solid rgb(207, 123, 123) 2px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  max-width: 330px;
+  min-width: 150px;
+}
+
+#cartDiv {
+  padding-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+}
 /*Media query time!*/
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
+  #landing {
+    height: 100%;
+  }
+
+  #amazeParent {
+    padding-bottom: 50px;
+    margin-bottom: 0;
+  }
+  #sideBordersChild {
+    width: 90%;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+   
+  .flexParent {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .left {
+    min-width: 90%;
+  }
+  .left img {
+    max-width: none;
+    min-width: 100%;
+  }
+  #bottomFlex {
+    margin: 0;
+  }
+   
+  .button {
+    padding: 8px;
+    
+  }
+}
+@media screen and (max-device-width: 900px) {
+  #landing {
+    height: 100vh;
+  }
+  #sideBordersChild {
+    width: 95%;
+  }
+}
+@media only screen and (max-device-width: 375px), 
+only screen and (max-width: 900px) {
+  .right {
+    display: flex;
+    flex-direction: column;
+  }
+  #coffeeSection .secondP {
+    display: none;
+  }
+  sidebar {
+    top: 150px;
+  }
+}
+@media only screen and (max-device-width: 375px){
   /*New Welcome message styling*/
+
+  #landing {
+    background-position: 20%;
+    background-attachment: fixed;
+    background-size: 350%;
+  }
+
   #message {
     font-size: 3rem;
     padding: 10px 20px;
@@ -297,16 +440,41 @@ footer {
   #header {
     flex-wrap: nowrap;
     justify-content: center;
+    height: 150px;
   }
   #title {
-    padding-left: 20px;
-    font-size: 2rem;
+   display: flex;
+    align-items: center;
+  }
+  #title span {
+    font-size: 6rem;
   }
   #title img {
     height: 2rem;
   }
   #navigation {
     display: none;
+  }
+
+  #yourHouse {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  #yourHouse h1 {
+    font-size: 9rem;
+  }
+
+  #whatsBrewing {
+    margin-top: 30%;
+  }
+
+  #whatsBrewing button {
+    width: 100%;
+  }
+  #whatsBrewing a {
+    font-size: 6rem;
   }
 
   /*New "Three Amazing Brews" styling*/
@@ -323,7 +491,7 @@ footer {
     border: none;
   } 
   #amazeChild h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     border-top: 1px solid #292012;
     padding-top: 10px;
   }
@@ -334,16 +502,7 @@ footer {
   /*New coffee section styles*/
   /*Styling for three coffee pictures and their <p>s*/
   #coffeeSection p {
-    border: none;
-    border-bottom: 1px solid #292012;
-    line-height: 1.8rem;
-    font-weight: bold;
-    padding: 20px 10px;
-    margin-bottom: 50px;
-    text-align: center;
-    width: 100%;
-    min-width: 100px;
-    max-width: 400px;
+    width: 80%;
   }
   #coffeeSection img {
     box-shadow: 0px 5px 5px 0px #292012;
@@ -351,15 +510,20 @@ footer {
     max-width: 400px;
   }
 
+  .button {
+    margin-top: 20px;
+  }
   /*This gets rid of the vertical borders on the sides*/
   #sideBordersChild {
     border: none;
     padding: 0;
+    width: 100%;
   }
   /*This aligns the content to the center of each flexbox*/
   .flexParent {
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 35px;
   }
 
 
@@ -371,24 +535,15 @@ footer {
   }
   .right {
     justify-content: center;
-    margin: 0;
+    flex-wrap: wrap;
+    flex-direction: column;
     min-width: 100px;
     width: 100%;
   }
-  /*This element does not work here when the layout is smaller so we must hide it and reveal its twin underneath the image it corresponds to*/
-  .middleLeft{
-    display: none;
+  .left img {
+    min-width: 90%;
   }
-  /*This element is hidden when the page size is big but this reveals it when the page size is shrinks*/
-  .middleLeftSmall {
-    display: block;
-  }
-  .middleRight{
-    margin: 0;
-    width: 100%;
-    min-width: 100px;
-  }
-
+ 
 
   /*Shortening the margins on the bottomflexFarent to look more pleasing on smaller screens*/
   #bottomFlex {
@@ -400,6 +555,6 @@ footer {
   }
   #creditsInfo {
     padding: 5px 0px;
-    font-size: .75rem;
+    font-size: 1.7rem;
   }
 }

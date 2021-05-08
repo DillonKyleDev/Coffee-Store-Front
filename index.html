@@ -7,33 +7,6 @@
   </head> 
 
   <body>
-
-    <div id="landing">
-      <div id="yourHouseContainer">
-
-        <div id="yourHouse">
-          <h1>
-            <span class="our">Our</span>
-             House is your house.
-          </h1>
-        </div><!--id=yourHouse-->
-
-        <div id="linkContainer">
-
-          <button id="whatsBrewing">
-            <a href="#sideBordersParent">
-              See what's brewing
-            </a>
-          </button>
-
-        </div><!--id=linkContainer-->
-
-    </div><!--id=yourHouseContainer-->
-
-
-    </div><!--id=landing-->
-
-
   <!--code for the top bar and nav-->
   <div id="header">
     <h2 id="title"><a href="#landing"><span class="our">Our</span><span id="house">House</span></a></h2>
@@ -42,6 +15,55 @@
       <a href="#">Cart (<span id="cartItems">0</span>)</a>
     </div><!--id=navigation-->
   </div><!--id=header-->
+
+  <sidebar>
+    <div>
+      <button class="button" id="hideSidebar">Hide Cart</button>
+      <div id="cartObject">
+        <!--imaginary space for cart items-->
+        <div class="cartItem">
+          <p>
+          "<span id="name">Dark Roast</span>"
+          (<span id="quantity">2</span>)
+          -$<span id="price">30.00</span>
+          <button id="remove" class="button">Remove</button>
+        </p>
+        </div>
+        <div id="grandTotal">
+          <label>Total</label>
+          <p id="total">$35.98</p>
+      </div>
+      </div></div>
+    </div>
+
+
+
+  </sidebar>
+    <div id="landing">
+      <div id="yourHouseContainer">
+
+        <div id="yourHouse">
+          <h1>
+            <span class="our">Our</span>
+             House is your house.
+          </h1>
+          
+        <button id="whatsBrewing">
+          <img src="icons/arrowRight.png">
+          <a href="#sideBordersParent">
+            See what's brewing
+          </a>
+          <img src="icons/arrowLeft.png">
+        </button>
+        
+        </div><!--id=yourHouse-->
+
+        
+    </div><!--id=yourHouseContainer-->
+
+
+    </div><!--id=landing-->
+
 
 
 <div id="sideBordersParent">
@@ -68,22 +90,22 @@
         </div><!--left-->
 
         <div class="right">
-          <p>First up is our classic Premium Dark Roasted Coffee.</p>
+          <button class="button" id="addFirst">Add to cart</button>
+          <p>Dark Roast Coffee Beans (3lbs)</p>
+          <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
         </div><!--right-->
       </div><!--flexParent-->
 
 
       <div class="flexParent">
-        <div class="middleLeft">
-          <p> Up next is our lovely Soy Latte.</p>
-        </div><!--Left-->
-
-        <div class="middleRight">
+        <div class="left">
           <img src="coffee/coffee2.jpg" alt="coffee1">
         </div><!--middleRight-->
 
-        <div class="middleLeftSmall">
-          <p> Up next is our lovely Soy Latte..</p>
+        <div class="right">
+          <button class="button" id="addSecond">Add to cart</button>
+          <p>Light Roast Coffee Beans (3lbs)</p>
+          <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
         </div><!--Left-->
       </div><!--flexParent-->
 
@@ -94,10 +116,15 @@
         </div><!--left-->
 
         <div class="right">
-          <p> And who could forget our refreshing, flavor-packed Iced Tea? </p>
+          <button class="button" id="addThird">Add to cart</button>
+          <p>Sunkiss Iced Tea Bags (20)</p>
+          <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
         </div><!--right-->
       </div><!--flexParent-->
 
+      <div id="cartDiv">
+        <button class="button" id="cartButton">View Cart</button>
+      </div>
 
     </div><!--coffeeSection-->
   </div><!--sideBordersChild-->
