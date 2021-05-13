@@ -8,123 +8,113 @@
 
   <body>
   <!--code for the top bar and nav-->
-  <div id="header">
+  <div id="unclickedHeader">
     <h2 id="title"><a href="#landing"><span class="our">Our</span><span id="house">House</span></a></h2>
 
     <div id="navigation">
-      <a href="#">Cart (<span id="cartItems">0</span>)</a>
+      <a class="cartButton">Cart</a>
     </div><!--id=navigation-->
-  </div><!--id=header-->
+  </div><!--id=unclickedHeader-->
 
-  <sidebar>
+  <sidebar id='unclicked'>
     <div>
-      <button class="button" id="hideSidebar">Hide Cart</button>
-      <div id="cartObject">
-        <!--imaginary space for cart items-->
-        <div class="cartItem">
-          <p>
-          "<span id="name">Dark Roast</span>"
-          (<span id="quantity">2</span>)
-          -$<span id="price">30.00</span>
-          <button id="remove" class="button">Remove</button>
-        </p>
-        </div>
-        <div id="grandTotal">
-          <label>Total</label>
-          <p id="total">$35.98</p>
+      <div id="cartObject"><!--cart items--></div>
+      <div id='totalBox'>
+        <span>Total: $</span><span id="grandTotal">00.00</span>      
       </div>
-      </div></div>
+    </div>
+  </sidebar>
+
+  <!--main landing page-->
+  <div id="landing">
+    <div id="yourHouseContainer">
+
+      <div id="yourHouse">
+        <h1>
+          <span class="our">Our</span>
+            House is your house.
+        </h1>
+        
+      <button id="whatsBrewing">
+        <img src="icons/arrowRight.png">
+        <a href="#sideBordersParent">
+          See what's brewing
+        </a>
+        <img src="icons/arrowLeft.png">
+      </button>
+      </div><!--id=yourHouse-->
+
+    </div><!--id=yourHouseContainer-->
+  </div><!--id=landing-->
+
+
+  <!--main content area-->
+  <div id="sideBordersParent">
+    <div id="sideBordersChild">
+
+      <!--code for coffeebean icons and h1-->
+    <div id="amazeParent">
+      <div id="amazeChild">
+      <img src="/icons/coffee-beans.png" alt="bean icon">
+      <h1> three amazing brews </h1>
+      </div><!--amazeChild-->
+    </div><!--amazeParent-->
+
+
+  <div id="coffeeSection">
+
+    <div class="flexParent">
+      <div class="left">
+        <img src="coffee/coffee1.jpg" alt="coffee1">
+      </div><!--left-->
+
+      <div class="right">
+        <button class="button addToCart" 
+        id="addFirst"
+        data-name="Dark Roast"
+        data-price="24.99"
+        >Add to cart</button>
+        <p>Dark Roast Coffee Beans (3lbs)</p>
+        <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
+      </div><!--right-->
+    </div><!--flexParent-->
+<!---------------------------------------------------------------------->
+    <div class="flexParent">
+      <div class="left">
+        <img src="coffee/coffee2.jpg" alt="coffee1">
+      </div><!--middleRight-->
+
+      <div class="right">
+        <button class="button addToCart" 
+        id="addSecond"
+        data-name="Light Roast"
+        data-price="19.99"
+        >Add to cart</button>
+        <p>Light Roast Coffee Beans (3lbs)</p>
+        <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
+      </div><!--Left-->
+    </div><!--flexParent-->
+<!---------------------------------------------------------------------->
+    <div class="flexParent" id="bottomFlex">
+      <div class="left">
+        <img src="coffee/coffee3.jpg" alt="coffee1">
+      </div><!--left-->
+
+      <div class="right">
+        <button class="button addToCart" 
+        id="addThird"
+        data-name="Sunkiss Tea"
+        data-price="14.99"
+        >Add to cart</button>
+        <p>Sunkiss Iced Tea Bags (20)</p>
+        <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
+      </div><!--right-->
+    </div><!--flexParent-->
+<!---------------------------------------------------------------------->
+    <div id="cartDiv">
+      <button class="button cartButton">View Cart</button>
     </div>
 
-
-
-  </sidebar>
-    <div id="landing">
-      <div id="yourHouseContainer">
-
-        <div id="yourHouse">
-          <h1>
-            <span class="our">Our</span>
-             House is your house.
-          </h1>
-          
-        <button id="whatsBrewing">
-          <img src="icons/arrowRight.png">
-          <a href="#sideBordersParent">
-            See what's brewing
-          </a>
-          <img src="icons/arrowLeft.png">
-        </button>
-        
-        </div><!--id=yourHouse-->
-
-        
-    </div><!--id=yourHouseContainer-->
-
-
-    </div><!--id=landing-->
-
-
-
-<div id="sideBordersParent">
-  <div id="sideBordersChild">
-
-     <!--code for coffeebean icons and h1-->
-  <div id="amazeParent">
-    <div id="amazeChild">
-    
-    <img src="/icons/coffee-beans.png" alt="bean icon">
-
-    <h1> three amazing brews </h1>
-
-    </div><!--amazeChild-->
-  </div><!--amazeParent-->
-
-
-    <div id="coffeeSection">
-
-
-      <div class="flexParent">
-        <div class="left">
-          <img src="coffee/coffee1.jpg" alt="coffee1">
-        </div><!--left-->
-
-        <div class="right">
-          <button class="button" id="addFirst">Add to cart</button>
-          <p>Dark Roast Coffee Beans (3lbs)</p>
-          <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
-        </div><!--right-->
-      </div><!--flexParent-->
-
-
-      <div class="flexParent">
-        <div class="left">
-          <img src="coffee/coffee2.jpg" alt="coffee1">
-        </div><!--middleRight-->
-
-        <div class="right">
-          <button class="button" id="addSecond">Add to cart</button>
-          <p>Light Roast Coffee Beans (3lbs)</p>
-          <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
-        </div><!--Left-->
-      </div><!--flexParent-->
-
-
-      <div class="flexParent" id="bottomFlex">
-        <div class="left">
-          <img src="coffee/coffee3.jpg" alt="coffee1">
-        </div><!--left-->
-
-        <div class="right">
-          <button class="button" id="addThird">Add to cart</button>
-          <p>Sunkiss Iced Tea Bags (20)</p>
-          <p class="secondP">Our signiture blend... Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem rem perferendis asperiores magni modi nobis placeat accusamus quos facilis esse quae, temporibus vero vel architecto, distinctio alias! Enim, provident.</p>
-        </div><!--right-->
-      </div><!--flexParent-->
-
-      <div id="cartDiv">
-        <button class="button" id="cartButton">View Cart</button>
-      </div>
 
     </div><!--coffeeSection-->
   </div><!--sideBordersChild-->

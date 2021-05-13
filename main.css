@@ -33,25 +33,140 @@ body {
   flex-wrap: nowrap;
   justify-content: space-between;
   box-shadow: 0px 3px 3px 0px rgb(0,0,0,.2);
+  border: none;
 }
 
 sidebar {
   position: fixed;
   right: 0;
-  top: 68px;
+  top: 67px;
   height: 100vh;
-  background-color: rgb(0,0,0,.7);
+  background-color: rgb(0,0,0,.95);
   color: white;
   font-size: 2rem;
-  padding: 70px;
+  padding: 30px;
   text-align: right;
-  
+  width: 0px;
+  opacity: 0;
+  transition: opacity width;
+  transition-duration: 1.5s;
+}
+#clicked {
+  width: 410px;
+  opacity: 100;
+  background-color: rgb(0,0,0,.95);
+  transition-property: all;
+  transition-duration: .5s;
+}
+#clickedHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgb(0,0,0,.95);
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  border: none;
+  transition-property: all;
+  transition-duration: .5s;
+  box-shadow: 0px 0px 0px 0px;
+}
+#unclicked {
+  width: 0px;
+  opacity: 0;
+  transition-property:  all;
+  transition-duration: .5s;
+}
+#unclickedHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgb(0,0,0,.7);
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  box-shadow: 0px 3px 3px 0px rgb(0,0,0,.2);
+  border: none;
+  background-color: rgb(0,0,0,.7);
+  transition-property: all;
+  transition-duration: .5s;
 }
 #cartObject {
-  background-color: rgb(107, 60, 33);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 5px;
-  margin: 20px;
-  height: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  min-height: 400px;
+  border: solid 1px rgb(26, 25, 25);
+  border-radius: 10px;
+  overflow: hidden;
+}
+#cartObject p {
+  margin: 0;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.quantInput {
+  background-color: rgb(224, 224, 224);
+  border: solid 1px black;
+  width: 20px;
+  height: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 5px;
+  font-size: 1rem;
+}
+.cartButton {
+  margin: 5px;
+  padding: 0px 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: rgb(255, 46, 46);
+  color: white;
+  border: solid 2px rgb(41, 0, 0);
+  text-align: center;
+}
+#totalBox {
+  border: solid 10px rgb(73, 73, 73);
+  background-color: white;
+  width: max-content;
+  margin-right: 0;
+  margin-left: auto;
+  color: black;
+  padding: 5px;
+  text-align: left;
+}
+.alert {
+  background-color: rgb(189, 112, 112, .95);
+  border: 2px dotted rgb(133, 65, 65);
+  float: right;
+  text-align: right;
+  border-radius: 10px;
+  max-width: 300px;
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  z-index: 1000;
+}
+.alertElement {
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
+  margin: 5px 0px;
+  color: white;
+}
+.alert button {
+  background-color: rgb(255, 255, 255, .8);
+  border: 4px solid rgb(202, 146, 146);
+  float: right;
+  padding: 0px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 #hideSidebar {
   color: white;
@@ -65,11 +180,6 @@ sidebar {
 }
 #price {
   text-decoration: underline;
-}
-#grandTotal {
-  display: flex;
-  justify-content: center;
-  align-content: center;
 }
 label {
   padding: 5px;
@@ -89,15 +199,11 @@ label {
 .cartItem {
   background-color: rgb(255, 255, 255);
   color: black;
-  padding: 15px;
+  padding: 20px;
+  padding-left: 10px;
+  padding-right: 0;
   margin: 10px;
-}
-#cartObject #remove {
-  font-size: 1.5rem;
-  border: solid 1px rgb(46, 46, 46);
-  width: max-content;
-  margin-left: 10px;
-  border-radius: 2px;
+  display: flex;
 }
 
 /*"OUR SELECTION" Styling and logo image*/
@@ -136,14 +242,13 @@ a:visited {
   text-transform: uppercase;
   margin-right: 25px;
   padding: 15px 15px;
-  
   align-items: center;
   text-decoration: none;
   cursor: pointer;
   border: 1px solid #d3d3d3;
+  border-radius: 3px;
   background-color: rgb(163,71,10);
   color:rgb(255, 255, 255);
-  
   transition: background-color;
   transition-duration: .2s;
 }
@@ -188,6 +293,7 @@ a:visited {
   font-weight: 500;
   cursor: pointer;
   transition: color .2s;
+  min-width: 392px;
 }
 #whatsBrewing a {
   font-family: 'Amatic SC', cursive;
@@ -276,8 +382,6 @@ a:visited {
   text-decoration: underline #292012;
   font-style: italic;
 }
-
-
 /*left divs top and bottom*/
 .left {
   width: 50%;
@@ -302,15 +406,11 @@ a:visited {
   margin-bottom: 100px;
   border-bottom: solid 1px black;
 }
-
-
 /*Style for disclaimer at the bottom*/
 #disclaimer {
   text-align: center;
   padding-bottom: 100px;
 }
-
-
 /*Styling for credit for images used*/
 footer {
   text-align: center;
@@ -327,7 +427,6 @@ footer {
   color: white;
   text-decoration: none;
 }
-
 .button {
   background-color:#a3470a;
   border: solid rgb(207, 123, 123) 2px;
@@ -341,7 +440,6 @@ footer {
   max-width: 330px;
   min-width: 150px;
 }
-
 #cartDiv {
   padding-bottom: 30px;
   margin-left: auto;
@@ -353,7 +451,6 @@ footer {
   #landing {
     height: 100%;
   }
-
   #amazeParent {
     padding-bottom: 50px;
     margin-bottom: 0;
@@ -363,12 +460,10 @@ footer {
     padding-bottom: 0;
     padding-top: 0;
   }
-   
   .flexParent {
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .left {
     min-width: 90%;
   }
@@ -379,7 +474,6 @@ footer {
   #bottomFlex {
     margin: 0;
   }
-   
   .button {
     padding: 8px;
     
@@ -393,7 +487,8 @@ footer {
     width: 95%;
   }
 }
-@media only screen and (max-device-width: 375px), 
+
+@media only screen and (max-device-width: 375px),
 only screen and (max-width: 900px) {
   .right {
     display: flex;
@@ -403,18 +498,60 @@ only screen and (max-width: 900px) {
     display: none;
   }
   sidebar {
-    top: 150px;
+    top: 149px;
   }
-}
-@media only screen and (max-device-width: 375px){
-  /*New Welcome message styling*/
-
+  #clicked {
+    padding: 0;
+    width: 100vw;
+    justify-content: center;
+  }
+  #cartObject {
+    min-width: 728px;
+    width: max-content;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cartItem {
+    width: 70vw;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartItem p {
+    font-size: 3rem;
+    width: max-content;
+  }
+  .quantInput {
+    text-align: center;
+    font-size: 2rem;
+    width: 2rem;
+    height: 2.5rem;
+    margin: auto;
+  }
+  .cartItem button {
+    font-size: 2rem;
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  #totalBox {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #clickedHeader {
+    height: 151px;
+  }
+  #unclickedHeader {
+    height: 151px;
+  }
   #landing {
     background-position: 20%;
     background-attachment: fixed;
     background-size: 350%;
   }
-
   #message {
     font-size: 3rem;
     padding: 10px 20px;
@@ -435,13 +572,6 @@ only screen and (max-width: 900px) {
     transition: all;
     transition-duration: .1s;
   }
-
-  /*New top bar styling*/
-  #header {
-    flex-wrap: nowrap;
-    justify-content: center;
-    height: 150px;
-  }
   #title {
    display: flex;
     align-items: center;
@@ -455,29 +585,23 @@ only screen and (max-width: 900px) {
   #navigation {
     display: none;
   }
-
   #yourHouse {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    
   }
   #yourHouse h1 {
     font-size: 9rem;
   }
-
   #whatsBrewing {
     margin-top: 30%;
   }
-
   #whatsBrewing button {
     width: 100%;
   }
   #whatsBrewing a {
     font-size: 6rem;
   }
-
-  /*New "Three Amazing Brews" styling*/
   #amazeParent {
     padding-top: 50px;
     text-align: center;
@@ -498,9 +622,6 @@ only screen and (max-width: 900px) {
   #amazeChild img {
     display: none;
   }
-
-  /*New coffee section styles*/
-  /*Styling for three coffee pictures and their <p>s*/
   #coffeeSection p {
     width: 80%;
   }
@@ -509,25 +630,14 @@ only screen and (max-width: 900px) {
     width: 100%;
     max-width: 400px;
   }
-
   .button {
     margin-top: 20px;
   }
-  /*This gets rid of the vertical borders on the sides*/
-  #sideBordersChild {
-    border: none;
-    padding: 0;
-    width: 100%;
-  }
-  /*This aligns the content to the center of each flexbox*/
   .flexParent {
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 35px;
   }
-
-
-  /*Changes to the spacing of each div within the flexboxes*/
   .left {
     width: 100%;
     min-width: 100px;
@@ -543,13 +653,11 @@ only screen and (max-width: 900px) {
   .left img {
     min-width: 90%;
   }
- 
 
-  /*Shortening the margins on the bottomflexFarent to look more pleasing on smaller screens*/
   #bottomFlex {
     margin-bottom: 30px;
   }
-  /*Makes disclaimer pop a bit more*/
+
   #disclaimer {
     font-weight: bold;
   }
