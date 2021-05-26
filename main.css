@@ -582,8 +582,10 @@ only screen and (max-width: 900px) {
   #title img {
     height: 2rem;
   }
-  #navigation {
-    display: none;
+  #navigation a {
+    width: 7rem;
+    height: 3rem;
+    font-size: 2.5rem;
   }
   #yourHouse {
     width: 70%;
