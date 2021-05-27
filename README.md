@@ -11,7 +11,7 @@ The code is written in a way that would make adding more items in the future ver
 div with the indicated fields edited to fit the specific item.
 
 Indicated fields to customize have *** next to them.
-
+```
 <div class="flexParent">
       <div class="left">
 ***     <img src="<Image Location>" alt="">
@@ -26,7 +26,7 @@ Indicated fields to customize have *** next to them.
 ***     <p class="secondP">Description</p>
       </div><!--right-->
     </div><!--flexParent-->
-
+```
 
 ## The Style
 This is completely custom-written css and html
