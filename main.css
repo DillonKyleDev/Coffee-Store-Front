@@ -446,11 +446,24 @@ footer {
   margin-right: auto;
   padding-top: 10px;
 }
-/*Media query time!*/
-@media screen and (max-width: 600px) {
-  #landing {
-    height: 100%;
+
+@media screen and (max-width: 1160px) {
+  #whatsBrewing {
+    display: none;
   }
+}
+@media screen and (max-device-width: 1160px) {
+  #yourHouseContainer {
+    align-content: center;
+  }
+  #yourHouseContainer h1 {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+ 
   #amazeParent {
     padding-bottom: 50px;
     margin-bottom: 0;
@@ -488,14 +501,13 @@ footer {
   }
 }
 
-@media only screen and (max-device-width: 375px),
-only screen and (max-width: 900px) {
+@media only screen and (max-device-width: 375px) {
+  #yourHouse h1 {
+    font-size: 9rem;
+  }
   .right {
     display: flex;
     flex-direction: column;
-  }
-  #coffeeSection .secondP {
-    display: none;
   }
   sidebar {
     top: 149px;
@@ -592,9 +604,6 @@ only screen and (max-width: 900px) {
     margin-left: auto;
     margin-right: auto;
   }
-  #yourHouse h1 {
-    font-size: 9rem;
-  }
   #whatsBrewing {
     margin-top: 30%;
   }
@@ -666,5 +675,11 @@ only screen and (max-width: 900px) {
   #creditsInfo {
     padding: 5px 0px;
     font-size: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #coffeeSection .secondP {
+    display: none;
   }
 }
