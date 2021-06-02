@@ -462,7 +462,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
  
   #amazeParent {
     padding-bottom: 50px;
@@ -533,6 +533,9 @@ footer {
   .cartItem p {
     font-size: 3rem;
     width: max-content;
+  }
+  .secondP {
+    display: none;
   }
   .quantInput {
     text-align: center;
